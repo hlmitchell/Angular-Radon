@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <h3>Create New Market</h3>
+    <form>
+      <span>Location: </span>
+      <input type='text' id='addMarket' [(ngModel)]='location' [ngModelOptions]="{standalone: true}"/>
+      <button (click)='addMarket($event)'>Add Market</button>
+    </form>
+  </div>
+</div>

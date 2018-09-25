@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="outerBox">
+    <h1 id="header">Angular Redux Demo</h1>
+    <totals-display [totalMarkets]='totalMarkets' [totalCards]='totalCards'></totals-display>
+    <markets-container 
+      [incrementTotalMarkets]='incrementTotalMarkets' 
+      [marketsList]='marketsList'
+      [totalCards]='totalCards'
+      [addCard]='addCard'
+      [deleteCard]='deleteCard'
+    ></markets-container>
+  </div>
+</div>
