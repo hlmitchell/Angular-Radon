@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgRedux, NgReduxModule } from '@angular-redux/store'; //redux
 
-import { AppStateInterface, rootReducer, initialState } from './store'; //redux
+import { AppStateInterface, rootReducer, initialState } from './redux/store'; //redux
 import { AppComponent } from './app.component';
 import { TotalsDisplayComponent } from './totals-display/totals-display.component';
 import { MarketsContainerComponent } from './markets-container/markets-container.component';

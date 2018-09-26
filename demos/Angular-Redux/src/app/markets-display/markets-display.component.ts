@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
-import { AppStateInterface } from '../store';
-import { ADD_CARD, DELETE_CARD } from '../constants';
+import { AppStateInterface } from '../redux/store';
+import { ADD_CARD, DELETE_CARD } from '../redux/constants';
 
 @Component({
   selector: 'markets-display',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { marketsListInterface } from './store.js'
+import { marketsListInterface } from './redux/store.js'
 import { select } from '@angular-redux/store'; //redux
 
 @Component({

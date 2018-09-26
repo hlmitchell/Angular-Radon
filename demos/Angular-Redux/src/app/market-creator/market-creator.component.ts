@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
-import { AppStateInterface } from '../store';
-import { ADD_MARKET } from '../constants';
+import { AppStateInterface } from '../redux/store';
+import { ADD_MARKET } from '../redux/constants';
 
 @Component({
   selector: 'market-creator',
