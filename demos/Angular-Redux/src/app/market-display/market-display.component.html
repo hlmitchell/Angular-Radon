@@ -1,10 +1,10 @@
-<div *ngFor = 'let market of marketsList; let i = index' class="marketBox">
-  <div>Market ID: {{market.marketId}}</div>
-  <div>Location: {{market.location}}</div>
-  <div>Cards: {{market.cards}}</div>
-  <div>% of total: {{getPercent(market.cards)}}</div>
+<div class="marketBox">
+  <div>Market ID: {{marketId}}</div>
+  <div>Location: {{location}}</div>
+  <div>Cards: {{cards}}</div>
+  <div>% of total: {{getPercent()}}</div>
   <div>
-    <button (click)='addCard($event, i)'>Add Card</button>
-    <button (click)='deleteCard($event, i)'>Delete Card</button>
+    <button (click)='addCard($event, index)'>Add Card</button>
+    <button (click)='deleteCard($event, index)'>Delete Card</button>
   </div>
 </div>
