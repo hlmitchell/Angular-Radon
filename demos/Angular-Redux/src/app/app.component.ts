@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { marketsListInterface } from './store.js'
+import { select } from '@angular-redux/store'; //redux
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,9 @@ import { marketsListInterface } from './store.js'
   styleUrls: ['./app.component.css']
 })
 
-
-
 export class AppComponent {
-  title: string = 'angular-radon';
+
+  @select() title;
   totalMarkets: number = 0;
   totalCards: number = 0;
   lastMarketId: number = 10001;

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { select } from '@angular-redux/store'; //redux
 
 @Component({
   selector: 'totals-display',
@@ -7,8 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TotalsDisplayComponent {
 
-  @Input('totalMarkets') totalMarkets: number;
-  @Input('totalCards') totalCards: number;
+  @select() totalMarkets;
+  @select() totalCards;
 
-  constructor() { }
 }

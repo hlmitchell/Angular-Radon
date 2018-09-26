@@ -1,7 +1,7 @@
 <div class="container">
   <div class="outerBox">
-    <h1 id="header">Angular Redux Demo</h1>
-    <totals-display [totalMarkets]='totalMarkets' [totalCards]='totalCards'></totals-display>
+    <h1 id="header">{{(title | async)}}</h1> <!-- redux whyyyyy!?!?!? -->
+    <totals-display></totals-display>
     <markets-container 
       [incrementTotalMarkets]='incrementTotalMarkets' 
       [marketsList]='marketsList'

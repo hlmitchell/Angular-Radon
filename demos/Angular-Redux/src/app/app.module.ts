@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgRedux, NgReduxModule } from '@angular-redux/store'; //redux
 
+import { AppStateInterface, rootReducer, initialState } from './store'; //redux
 import { AppComponent } from './app.component';
 import { TotalsDisplayComponent } from './totals-display/totals-display.component';
 import { MarketsContainerComponent } from './markets-container/markets-container.component';
@@ -20,9 +22,15 @@ import { MarketDisplayComponent } from './market-display/market-display.componen
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgReduxModule //redux
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {  
+  constructor(ngRedux: NgRedux<AppStateInterface>) { //redux
+    ngRedux.configureStore(rootReducer, initialState);
+  }
+}
