@@ -1,10 +1,10 @@
 <div>
   <h3>Markets</h3>
-  <market-display *ngFor = 'let market of marketsList; let i = index'
+  <market-display *ngFor = 'let market of (marketsList | async); let i = index'
     [marketId]='market.marketId' 
     [location]='market.location'
     [cards]='market.cards'
-    [totalCards]='totalCards'
+    [totalCards]='(totalCards | async)'
     [addCard]='addCard'
     [deleteCard]='deleteCard'
     [index]='i'

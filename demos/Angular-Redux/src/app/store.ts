@@ -18,7 +18,7 @@ export const initialState: AppStateInterface = {
   title: 'Angular Redux Demo',
   totalMarkets: 0,
   totalCards: 0,
-  lastMarketId: 10001,
+  lastMarketId: 10000,
   marketsList: []
 }
 
@@ -56,15 +56,17 @@ export function rootReducer(state = initialState, action) {
       }
     }
 
-    case types.ADD_CARD: {
-      const totalCards: number = state.totalCards -= 1;
-      const marketsList: marketsListInterface[] = JSON.parse(JSON.stringify(state.marketsList));
-      marketsList[action.payload].cards -= 1;
-      return {
-        ...state,
-        totalCards,
-        marketsList
-      }
+    case types.DELETE_CARD: {
+      if (state.marketsList[action.payload].cards > 0) {
+        const totalCards: number = state.totalCards -= 1;
+        const marketsList: marketsListInterface[] = JSON.parse(JSON.stringify(state.marketsList));
+        marketsList[action.payload].cards -= 1;
+        return {
+          ...state,
+          totalCards,
+          marketsList
+        }
+      } else return state;
     }
 
     default:

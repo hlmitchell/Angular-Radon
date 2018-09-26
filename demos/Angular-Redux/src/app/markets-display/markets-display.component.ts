@@ -1,20 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgRedux, select } from '@angular-redux/store';
+import { AppStateInterface } from '../store';
+import { ADD_CARD, DELETE_CARD } from '../constants';
 
 @Component({
   selector: 'markets-display',
   templateUrl: './markets-display.component.html',
   styleUrls: ['./markets-display.component.css']
 })
-export class MarketsDisplayComponent implements OnInit {
+export class MarketsDisplayComponent {
 
-  @Input('marketsList') marketsList: Array<Object>;
-  @Input('totalCards') totalCards: number;
-  @Input('addCard') addCard: Function;
-  @Input('deleteCard') deleteCard: Function;
+  @select() marketsList;
+  @select() totalCards;
 
-  constructor() { }
+  constructor(private ngRedux: NgRedux<AppStateInterface>) { 
+    this.addCard = this.addCard.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
+  }
 
-  ngOnInit() {
+  addCard(e: Event, i: number) {
+    e.preventDefault();
+    this.ngRedux.dispatch({type: ADD_CARD, payload: i});
+  }
+
+  deleteCard(e: Event, i: number) {
+    e.preventDefault();
+    this.ngRedux.dispatch({type: DELETE_CARD, payload: i});
   }
 
 }

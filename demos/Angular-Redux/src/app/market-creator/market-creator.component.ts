@@ -1,30 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgRedux, select } from '@angular-redux/store';
+import { AppStateInterface } from '../store';
+import { ADD_MARKET } from '../constants';
 
 @Component({
   selector: 'market-creator',
   templateUrl: './market-creator.component.html',
   styleUrls: ['./market-creator.component.css']
 })
-export class MarketCreatorComponent implements OnInit {
-
-  @Input('incrementTotalMarkets') incrementTotalMarkets: Function;
+export class MarketCreatorComponent {
 
   location: string = '';
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private ngRedux: NgRedux<AppStateInterface>) { }
 
   addMarket(e: Event) {
     e.preventDefault();
-
     if (this.location !== '') {
-      const newMarket = {
-        location: this.location,
-        cards: 0,
-      }
-      this.incrementTotalMarkets(newMarket);
+      this.ngRedux.dispatch({type: ADD_MARKET, payload: this.location});
       this.location = '';
     }
   }

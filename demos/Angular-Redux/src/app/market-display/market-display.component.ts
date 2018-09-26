@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'market-display',
@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./market-display.component.css']
 })
 
-export class MarketDisplayComponent implements OnInit {
+export class MarketDisplayComponent {
 
   @Input('marketId') marketId: number;
   @Input('location') location: string;
@@ -18,9 +18,6 @@ export class MarketDisplayComponent implements OnInit {
 
   constructor() { 
     this.getPercent = this.getPercent.bind(this);
-  }
-
-  ngOnInit() {
   }
 
   getPercent(cards: number) {

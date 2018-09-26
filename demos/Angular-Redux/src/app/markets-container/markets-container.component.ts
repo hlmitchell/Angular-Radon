@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'markets-container',
@@ -6,18 +6,4 @@ import { Component, OnInit, Input} from '@angular/core';
   styleUrls: ['./markets-container.component.css']
 })
 
-export class MarketsContainerComponent implements OnInit {
-
-  @Input('incrementTotalMarkets') incrementTotalMarkets: Function;
-  @Input('marketsList') marketsList: Array<Object>;
-  @Input('totalCards') totalCards: number;
-  @Input('addCard') addCard: Function;
-  @Input('deleteCard') deleteCard: Function;
-
-  constructor() { 
-  }
-
-  ngOnInit() {
-  }
-
-}
+export class MarketsContainerComponent { }

@@ -2,12 +2,6 @@
   <div class="outerBox">
     <h1 id="header">{{(title | async)}}</h1> <!-- redux whyyyyy!?!?!? -->
     <totals-display></totals-display>
-    <markets-container 
-      [incrementTotalMarkets]='incrementTotalMarkets' 
-      [marketsList]='marketsList'
-      [totalCards]='totalCards'
-      [addCard]='addCard'
-      [deleteCard]='deleteCard'
-    ></markets-container>
+    <markets-container></markets-container>
   </div>
 </div>
