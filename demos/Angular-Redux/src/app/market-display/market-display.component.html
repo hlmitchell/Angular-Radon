@@ -1,0 +1,10 @@
+<div class="marketBox">
+  <div>Market ID: {{marketId}}</div>
+  <div>Location: {{location}}</div>
+  <div>Cards: {{cards}}</div>
+  <div>% of total: {{getPercent()}}</div>
+  <div>
+    <button (click)='addCard($event, index)'>Add Card</button>
+    <button (click)='deleteCard($event, index)'>Delete Card</button>
+  </div>
+</div>
