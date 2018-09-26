@@ -24,7 +24,7 @@ export class MarketDisplayComponent implements OnInit {
   }
 
   getPercent(cards: number) {
-    return Math.floor(cards / this.totalCards * 100) || 0;
+    return Math.floor(this.cards / this.totalCards * 100) || 0;
   }
 
 }
